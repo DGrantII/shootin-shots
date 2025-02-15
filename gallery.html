@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="keywords" content="photography, videography, Cassidy Sophier, Shootin' Shots" />
+    <!--<meta name="description" content="" />-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing%20Script&display=swap" rel="stylesheet">
+    <link href="./menu.css" rel="stylesheet" />
+    <link href="./gallery.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <script src="./home.js"></script>
+    <meta name="author" content="Devin Grant II" />
+    <title>Gallery</title>
+</head>
+<body onload="gallery()">
+    <div id="menu-container">
+        <div id="menuBars" onclick="show('menu')">
+            <div class="other"></div>
+            <div class="other"></div>
+            <div class="other"></div>
+        </div>
+        <nav id="menu">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About Me</a>
+            <a href="./gallery.html">Gallery</a>
+        </nav>
+    </div>
+    <div id="content">
+        <header>
+            <img src="./images/Shootin’ Shots.png" alt="Shootin' Shots Photography" />
+        </header>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="column">
+                <img src="./images/image1.jpg" data-order="1" />
+                <img src="./images/image6.jpeg" data-order="3"/>
+                <img src="./images/image4.jpg" data-order="5"/>
+                <img src="./images/image5.jpg" data-order="7"/>
+                <img src="./images/image9.JPG" data-order="9"/>
+                <img src="./images/image11.jpeg" data-order="11"/>
+            </div>
+            <div class="column">
+                <img src="./images/image2.jpg" data-order="2" />
+                <img src="./images/image7.jpeg" data-order="4" />
+                <img src="./images/image3.jpg" data-order="6"/>
+                <img src="./images/image8.jpeg" data-order="8"/>
+                <img src="./images/image10.JPG" data-order="10"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
