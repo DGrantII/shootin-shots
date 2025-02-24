@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="keywords" content="photography, videography, Cassidy Sophier, Shootin' Shots" />
     <!--<meta name="description" content="" />-->
-    <meta name="author" content="Devin Grant II" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing%20Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./menu.css" />
-    <link rel="stylesheet" href="./home.css" />
+    <link href="./menu.css" rel="stylesheet" />
+    <link href="./home.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <script src="./home.js"></script>
-    <title>Home</title>
+    <meta name="author" content="Devin Grant II" />
+    <title>Shootin' Shots</title>
 </head>
 <body>
     <div id="menu-container">
         <div id="menuBars" onclick="show('menu')">
-            <div class="home"></div>
-            <div class="home"></div>
-            <div class="home"></div>
+            <div class="other"></div>
+            <div class="other"></div>
+            <div class="other"></div>
         </div>
         <nav id="menu">
             <a href="./index.html">Home</a>
@@ -26,41 +26,58 @@
             <a href="./gallery.html">Gallery</a>
         </nav>
     </div>
-    <header>
-        <h1>Shootin' Shots<span> Photography</span></h1>
-    </header>
-    <div id="flex-container">
-        <section>
-            <h2>Events</h2>
-            <p>
-                Birthday parties, concerts, family reunions,
-                weddings, or maybe a family picture for a
-                Christmas card, you name it! Special moments
-                like these are so special to remember!
-            </p>
-        </section>
-        <section>
-            <h2>Graduation</h2>
-            <p>
-                Have a family member or friend passing a huge
-                milestone in life? Any grade, no matter the
-                accomplishment, there is always something to
-                celebrate!
-            </p>
-        </section>
-        <section>
-            <h2>Business</h2>
-            <p>
-                Did you just launch your new business? Are you
-                looking for pictures for your website or social
-                media? No matter if it is a portfolio or products
-                or your business location or type, I'm here to take
-                those pictures for you!
-            </p>
-        </section>
+    <div id="content">
+        <header>
+            <img src="./images/Shootin’ Shots.png" alt="Shootin' Shots Photography" />
+            <h1>by Cassidy Sophier</h1>
+        </header>
+        <div id="flex-container">
+            <div id="flex-container">
+                <div class="column">
+                    <div>
+                        <div class="image-wrapper">
+                            <img src="./images/bubble2.jpeg" alt="Graduations" />
+                        </div>
+                        <p>
+                            Have a family member or friend passing a huge
+                            milestone in life? Any grade, no matter the
+                            accomplishment, there is always something to
+                            celebrate!        
+                        </p>
+                    </div>
+                    <div>
+                        <div class="image-wrapper">
+                            <img src="./images/bubble4.jpg" alt="Business" />
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <div class="image-wrapper">
+                            <img src="./images/bubble1.jpg" alt="Events" />
+                        </div>
+                        <p>
+                            Birthday parties, concerts, family reunions,
+                            weddings, or maybe a family picture for a
+                            Christmas card, you name it! Special moments
+                            like these are so special to remember!        
+                        </p>
+                    </div>
+                    <div>
+                        <div class="image-wrapper">
+                            <img src="./images/bubble3.jpg" alt="Live Music" />
+                        </div>
+                        <p>
+                            Did you just launch your new business? Are you
+                            looking for pictures for your website or social
+                            media? No matter if it is a portfolio or products
+                            or your business location or type, I'm here to take
+                            those pictures for you!        
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer>
-
-    </footer>
 </body>
 </html>
