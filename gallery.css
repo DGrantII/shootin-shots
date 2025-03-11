@@ -1,24 +1,5 @@
 @charset "utf-8";
 
-* {
-    box-sizing: border-box;
-    font-family: Times, 'Times New Roman', serif;
-}
-
-body {
-    background-color:  rgb(227, 186, 182);
-}
-
-div#content {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color:  rgb(242,235,221);
-    min-height: 900px;
-    padding: 20px;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5), 0 6px 30px 0 rgba(0, 0, 0, 0.25);
-}
-
 h1 {
     margin-top: 30px;
     font-size: 3.5em;

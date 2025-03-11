@@ -22,7 +22,7 @@ div#menuBars div {
 }
 
 div#menuBars div.home {
-    background-color: rgb(242, 235, 221);
+    background-color: var(--cream);
     box-shadow: 0 0 15px white;
 }
 
@@ -38,10 +38,10 @@ div#menu-container > nav {
     left: -500px;
     width: 200px;
     height: 200px;
-    background-color: rgb(242, 235, 221);
+    background-color: var(--cream);
     border-radius: 10px;
     transition: left 1s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 6px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow);
     z-index: 1;
 }
 
