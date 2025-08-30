@@ -40,7 +40,7 @@ div#menu-container > nav {
     height: 200px;
     background-color: var(--cream);
     border-radius: 10px;
-    transition: left 1s;
+    transition: left 0.75s;
     box-shadow: var(--shadow);
     z-index: 1;
 }
