@@ -2,14 +2,13 @@
 
 h1 {
     margin-top: 30px;
-    font-size: 3.5em;
-    font-family: 'Dancing Script', fantasy;
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     color: black;
 }
 
 h1 > span {
-    font-family: 'Dancing Script', fantasy;
+    font-family: 'Dancing Script', cursive;
 }
 
 header img {
@@ -19,8 +18,7 @@ header img {
 
 h2 {
     text-align: center;
-    font-size: 3em;
-    font-family: 'Dancing Script', fantasy;
+    font-family: 'Dancing Script', cursive;
 }
 
 div.gallery {

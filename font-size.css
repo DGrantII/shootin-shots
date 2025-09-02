@@ -1,0 +1,35 @@
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+h1.larger {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h3.larger {
+    font-size: 1.75rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+p.larger {
+    font-size: 1.25rem;
+}
+
+small {
+    font-size: 0.8rem;
+}

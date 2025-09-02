@@ -2,27 +2,22 @@
 
 h1#notFound {
     margin-top: 20px;
-    font-size: 2em;
 }
 
 p#subtitle {
     margin-top: 10px;
-    font-size: 0.75em;
     text-align: center;
     color: black;
     font-weight: 300;
-    font-family: Verdana, sans-serif;
 }
 
 main p {
     width: 100%;
-    font-family: Verdana, sans-serif;
-    font-size: 1.25em;
     margin: 0;
 }
 
 header {
-    height: 50vh;
+    margin-bottom: 15px;
 }
 
 header img {
@@ -35,22 +30,14 @@ section#intro {
     margin-top: 30px;
 }
 
-section#intro h1, section#intro h2 {
-    font-family: Verdana, sans-serif;
-    font-weight: 600;
-}
-
 section#intro h1 {
-    font-size: 1.6em;
+    font-family: 'Dancing Script', cursive;
 }
 
-section#intro h2 {
-    font-size: 1.2em;
-}
 
 h3 {
-    font-weight: 600;
-    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 10px;
 }
 
 /* Testing image animation */
@@ -58,7 +45,7 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 100px 50px;
+    padding: 30px 50px;
     min-height: 50vh;
     overflow: hidden;
     gap: 20px;
@@ -129,27 +116,15 @@ h3 {
         border-right: 2vw solid var(--dark-pink);
     }
 
-    main p {
-        font-size: clamp(12px, 2vw, 1.25em);
-    }
-
-    section#intro h1 {
-        font-size: 1.25em;
-    }
-
-    section#intro h2 {
-        font-size: 1em;
-    }
-
     h3 {
         font-weight: 600;
-        font-size: 1.3em;
     }
 }
 
 @media (max-width: 500px) {
     header {
         height: 40vh;
+        margin-bottom: 0;
     }
 
     .topic-section {

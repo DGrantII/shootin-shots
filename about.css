@@ -1,12 +1,7 @@
 @charset "utf-8";
 
 h1 {
-    font-family: 'Dancing Script', fantasy;
-    font-size: 2em;
-}
-
-div#flex-container > section > p {
-    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive;
 }
 
 div#flex-container {
