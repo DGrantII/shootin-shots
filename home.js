@@ -3,6 +3,16 @@ function show(menu) {
     elem.classList.toggle('shown');
 }
 
+window.onclick = function (event) {
+    console.log(event.target);
+    if (!event.target.matches('#menuBars') && !event.target.matches('.other')) {
+        const dropdown = document.getElementById('menu'); 
+        if (dropdown.classList.contains('shown')) {
+            dropdown.classList.remove('shown');
+        }
+    }
+}
+
 function gallery() {
     const images = Array.from(document.querySelectorAll('div.column > img'));
     images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
