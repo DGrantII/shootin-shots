@@ -29,6 +29,18 @@ div#content {
     box-shadow: var(--shadow);
 }
 
+/* Responsive header logo (<picture> wrapper from image optimization) */
+header picture {
+    display: block;
+    width: 100%;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* --- Home page call-to-action buttons --- */
 .cta-group {
     display: flex;

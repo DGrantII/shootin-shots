@@ -93,8 +93,9 @@ async function optimizeFile(fileName) {
   const isLogo = presetKey === 'logo';
 
   const inputBuffer = await fs.readFile(inputPath);
-  const image = sharp(inputBuffer);
-  const metadata = await image.metadata();
+  // Apply EXIF orientation before measuring or resizing (fixes rotation / squish).
+  const orientedBuffer = await sharp(inputBuffer).rotate().toBuffer();
+  const metadata = await sharp(orientedBuffer).metadata();
   if (!metadata.width || !metadata.height) {
     throw new Error(`Could not read dimensions for ${fileName}`);
   }
@@ -112,7 +113,7 @@ async function optimizeFile(fileName) {
   for (const width of targetWidths) {
     const webpName = variantName(base, width, 'webp');
     const webpPath = path.join(imagesDir, webpName);
-    await sharp(inputBuffer)
+    await sharp(orientedBuffer)
       .resize({ width, withoutEnlargement: true })
       .webp({ quality: preset.webpQuality })
       .toFile(webpPath);
@@ -127,7 +128,7 @@ async function optimizeFile(fileName) {
   if (isLogo) {
     fallbackName = fileName;
     fallbackType = 'image/png';
-    const out = await sharp(inputBuffer)
+    const out = await sharp(orientedBuffer)
       .resize({ width: maxWidth, withoutEnlargement: true })
       .png({ quality: preset.pngQuality ?? 90, compressionLevel: 9 })
       .toBuffer();
@@ -139,7 +140,7 @@ async function optimizeFile(fileName) {
     const jpegExt = ext === '.jpg' ? '.jpg' : '.jpeg';
     fallbackName = `${base}${jpegExt}`;
     fallbackType = 'image/jpeg';
-    const out = await sharp(inputBuffer)
+    const out = await sharp(orientedBuffer)
       .resize({ width: maxWidth, withoutEnlargement: true })
       .jpeg({ quality: preset.jpegQuality, mozjpeg: true })
       .toBuffer();
@@ -183,6 +184,30 @@ function buildPictureTag(entry, { alt, loading, id, dataOrder }) {
                 </picture>`;
 }
 
+function applyManifestDimensions(html, manifest) {
+  let out = html;
+  for (const entry of Object.values(manifest)) {
+    const src = entry.fallback.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    out = out.replace(
+      new RegExp(`(<img[^>]*src="${src}"[^>]*?)width="\\d+"`, 'g'),
+      `$1width="${entry.width}"`,
+    );
+    out = out.replace(
+      new RegExp(`(<img[^>]*src="${src}"[^>]*?)height="\\d+"`, 'g'),
+      `$1height="${entry.height}"`,
+    );
+    const base = entry.base;
+    out = out.replace(
+      new RegExp(
+        `(<source[^>]*srcset=")([^"]*${base}[^"]*)("[^>]*sizes=")[^"]*(")`,
+        'g',
+      ),
+      `$1${entry.srcset}$3${entry.sizes}$4`,
+    );
+  }
+  return out;
+}
+
 async function patchHtml(manifest) {
   const galleryPath = path.join(root, 'gallery.html');
   let galleryHtml = await fs.readFile(galleryPath, 'utf8');
@@ -196,6 +221,7 @@ async function patchHtml(manifest) {
       return buildPictureTag(entry, { alt, loading, dataOrder: order });
     },
   );
+  galleryHtml = applyManifestDimensions(galleryHtml, manifest);
   await fs.writeFile(galleryPath, galleryHtml);
 
   const indexPath = path.join(root, 'index.html');
@@ -216,6 +242,7 @@ async function patchHtml(manifest) {
     );
     indexHtml = indexHtml.replace(re, buildPictureTag(entry, { alt }));
   }
+  indexHtml = applyManifestDimensions(indexHtml, manifest);
   await fs.writeFile(indexPath, indexHtml);
 
   const aboutPath = path.join(root, 'about.html');
@@ -227,6 +254,7 @@ async function patchHtml(manifest) {
       buildPictureTag(profile, { alt: 'Cassidy Sophier, photographer', id: 'profile' }),
     );
   }
+  aboutHtml = applyManifestDimensions(aboutHtml, manifest);
   await fs.writeFile(aboutPath, aboutHtml);
 
   const logo = manifest['shootin-shots-logo'];
@@ -239,6 +267,7 @@ async function patchHtml(manifest) {
         /<img src="\.\/images\/shootin-shots-logo\.png" alt="Shootin' Shots Photography" \/>/,
         logoPicture,
       );
+      html = applyManifestDimensions(html, manifest);
       await fs.writeFile(pagePath, html);
     }
   }

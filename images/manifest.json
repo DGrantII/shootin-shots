@@ -95,7 +95,7 @@
     "srcset": "./images/image14-480w.webp 480w, ./images/image14-960w.webp 960w",
     "fallback": "./images/image14.jpeg",
     "width": 960,
-    "height": 640,
+    "height": 1440,
     "sizes": "(max-width: 500px) 100vw, 50vw",
     "fallbackType": "image/jpeg"
   },
@@ -125,7 +125,7 @@
     "srcset": "./images/image17-480w.webp 480w, ./images/image17-960w.webp 960w",
     "fallback": "./images/image17.jpeg",
     "width": 960,
-    "height": 640,
+    "height": 1440,
     "sizes": "(max-width: 500px) 100vw, 50vw",
     "fallbackType": "image/jpeg"
   },
@@ -155,7 +155,7 @@
     "srcset": "./images/image2-480w.webp 480w, ./images/image2-960w.webp 960w",
     "fallback": "./images/image2.jpeg",
     "width": 960,
-    "height": 640,
+    "height": 1440,
     "sizes": "(max-width: 500px) 100vw, 50vw",
     "fallbackType": "image/jpeg"
   },
@@ -225,7 +225,7 @@
     "srcset": "./images/image7-480w.webp 480w, ./images/image7-960w.webp 960w",
     "fallback": "./images/image7.jpeg",
     "width": 960,
-    "height": 640,
+    "height": 1440,
     "sizes": "(max-width: 500px) 100vw, 50vw",
     "fallbackType": "image/jpeg"
   },
@@ -255,7 +255,7 @@
     "srcset": "./images/profile-300w.webp 300w, ./images/profile-600w.webp 600w",
     "fallback": "./images/profile.jpeg",
     "width": 600,
-    "height": 450,
+    "height": 800,
     "sizes": "(max-width: 800px) 300px, 300px",
     "fallbackType": "image/jpeg"
   },

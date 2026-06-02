@@ -28,6 +28,14 @@ div#flex-container > section {
 img {
     display: block;
     width: 100%;
+    height: auto;
+}
+
+aside picture {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a#email {
@@ -57,8 +65,12 @@ a#email:focus-visible {
     }
 
     img#profile {
-        width: 300px;
+        width: min(300px, 70vw);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    aside picture {
+        max-width: min(300px, 70vw);
     }
 }
