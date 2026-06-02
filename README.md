@@ -55,10 +55,6 @@ npm run optimize-images
 
 Re-run `npm run optimize-images` whenever you add or replace photos. Width presets live in `scripts/optimize-images.mjs` (`gallery`, `home`, `profile`, `logo`).
 
-### Cache lifetimes (GitHub Pages)
-
-GitHub Pages sets cache headers for you; you cannot customize them in-repo. If Lighthouse still flags cache policy, put the site behind **Cloudflare** (or similar) and set long cache TTLs for `/images/*`. That is optional; image size reduction usually has the larger impact on performance score.
-
 ## Run locally
 
 Use a local static server (do not open HTML files directly with `file://` — scripts and paths may not work correctly):
