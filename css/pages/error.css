@@ -1,0 +1,13 @@
+/* 404 not-found page. */
+
+@charset "utf-8";
+
+h1#notFound {
+    margin-top: 20px;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+}

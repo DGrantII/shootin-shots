@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="keywords" content="photography, videography, Cassidy Sophier, Shootin' Shots, local photographer, Parker County Texas" />
     <meta name="description" content="Discover stunning photography and videography services in Parker County Texas. Capture your special moments with a professional and creative approach." />
+    <meta property="og:title" content="Shootin' Shots Photography" />
+    <meta property="og:description" content="Professional photography and videography in Parker County, Texas." />
+    <meta property="og:image" content="./images/shootin-shots-logo.png" />
+    <meta property="og:type" content="website" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing%20Script&display=swap" rel="stylesheet">
-    <link href="./base.css" rel="stylesheet" />
-    <link href="./menu.css" rel="stylesheet" />
-    <link href="./font-size.css" rel="stylesheet" />
-    <link href="./home.css" rel="stylesheet" />
+    <link href="./css/base.css" rel="stylesheet" />
+    <link href="./css/menu.css" rel="stylesheet" />
+    <link href="./css/font-size.css" rel="stylesheet" />
+    <link href="./css/pages/home.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <script type="text/javascript" src="./home.js"></script>
-    <script type="text/javascript" src="./imageAnimate.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/scroll-animate.js" defer></script>
     <meta name="author" content="Devin Grant II" />
     <title>Shootin' Shots</title>
-    
 </head>
 <body>
-    <div id="menu-container">
-        <div id="menuBars" onclick="show('menu')">
-            <div class="other"></div>
-            <div class="other"></div>
-            <div class="other"></div>
-        </div>
-        <nav id="menu">
-            <a href="./index.html">Home</a>
-            <a href="./about.html">About Me</a>
-            <a href="./gallery.html">Gallery</a>
-        </nav>
-    </div>
+    <!-- Site navigation (injected by navigation.js) -->
+    <div id="menu-container" data-nav></div>
     <div id="content">
         <header class="spacer">
-            <img src="./images/Shootin’ Shots.png" alt="Shootin' Shots Photography" />
+            <img src="./images/shootin-shots-logo.png" alt="Shootin' Shots Photography" />
             <p id="subtitle">by Cassidy Sophier</p>
             <section id="intro">
                 <h1 class="larger">Welcome to Shootin' Shots Photography!</h1>
@@ -40,9 +33,10 @@
             </section>
         </header>
         <main>
+            <!-- Service: Weddings -->
             <section class="topic-section">
                 <div class="image-container hidden-left">
-                    <img src="./images/bubble1.jpeg" alt="Wedding Photo" />
+                    <img src="./images/bubble1.jpeg" alt="Wedding and engagement photography sample" />
                 </div>
                 <div class="text-container hidden-right">
                     <h3 class="larger">Weddings and Engagements</h3>
@@ -53,6 +47,7 @@
                     </p>
                 </div>
             </section>
+            <!-- Service: Graduations -->
             <section class="topic-section">
                 <div class="text-container hidden-left">
                     <h3 class="larger">Graduations</h3>
@@ -63,12 +58,13 @@
                     </p>
                 </div>
                 <div class="image-container hidden-right">
-                    <img src="./images/bubble2.jpeg" alt="Wedding Photo" />
+                    <img src="./images/bubble2.jpeg" alt="Graduation photography sample" />
                 </div>
             </section>
+            <!-- Service: Businesses -->
             <section class="topic-section">
                 <div class="image-container hidden-left">
-                    <img src="./images/bubble3.jpeg" alt="Wedding Photo" />
+                    <img src="./images/bubble3.jpeg" alt="Business and headshot photography sample" />
                 </div>
                 <div class="text-container hidden-right">
                     <h3 class="larger">Businesses</h3>
@@ -79,6 +75,7 @@
                     </p>
                 </div>
             </section>
+            <!-- Service: Events -->
             <section class="topic-section">
                 <div class="text-container hidden-left">
                     <h3 class="larger">Events</h3>
@@ -89,10 +86,12 @@
                     </p>
                 </div>
                 <div class="image-container hidden-right">
-                    <img src="./images/bubble4.jpeg" alt="Wedding Photo" />
+                    <img src="./images/bubble4.jpeg" alt="Event photography sample" />
                 </div>
             </section>
         </main>
+        <!-- Site footer (injected by navigation.js) -->
+        <footer class="site-footer" data-footer></footer>
     </div>
 </body>
 </html>

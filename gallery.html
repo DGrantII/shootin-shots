@@ -1,65 +1,60 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="keywords" content="photography, videography, Cassidy Sophier, Shootin' Shots, photo gallery" />
     <meta name="description" content="Explore the captivating gallery showcasing the finest photography work by Cassidy Sophier. See graduations, events, and more." />
     <link href="https://fonts.googleapis.com/css2?family=Dancing%20Script&display=swap" rel="stylesheet">
-    <link href="./base.css" rel="stylesheet" />
-    <link href="./menu.css" rel="stylesheet" />
-    <link href="./font-size.css" rel="stylesheet" />
-    <link href="./gallery.css" rel="stylesheet" />
+    <link href="./css/base.css" rel="stylesheet" />
+    <link href="./css/menu.css" rel="stylesheet" />
+    <link href="./css/font-size.css" rel="stylesheet" />
+    <link href="./css/pages/gallery.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <script src="./home.js"></script>
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/gallery.js" defer></script>
     <meta name="author" content="Devin Grant II" />
     <title>Gallery</title>
 </head>
-<body onload="gallery()">
-    <div id="menu-container">
-        <div id="menuBars" onclick="show('menu')">
-            <div class="other"></div>
-            <div class="other"></div>
-            <div class="other"></div>
-        </div>
-        <nav id="menu">
-            <a href="./index.html">Home</a>
-            <a href="./about.html">About Me</a>
-            <a href="./gallery.html">Gallery</a>
-        </nav>
-    </div>
+<body>
+    <!-- Site navigation (injected by navigation.js) -->
+    <div id="menu-container" data-nav></div>
     <div id="content">
         <header>
-            <img src="./images/Shootin’ Shots.png" alt="Shootin' Shots Photography" />
+            <img src="./images/shootin-shots-logo.png" alt="Shootin' Shots Photography" />
         </header>
-        <h1 class="larger">Gallery</h1>
-        <div class="gallery">
-            <div class="column">
-                <img src="./images/image1.jpeg" data-order="1" />
-                <img src="./images/image3.jpeg" data-order="3"/>
-                <img src="./images/image5.jpeg" data-order="5"/>
-                <img src="./images/image7.jpeg" data-order="7"/>
-                <img src="./images/image9.jpeg" data-order="9"/>
-                <img src="./images/image11.jpeg" data-order="11"/>
-                <img src="./images/image13.jpeg" data-order="13"/>
-                <img src="./images/image15.jpeg" data-order="15"/>
-                <img src="./images/image17.jpeg" data-order="17"/>
-                <img src="./images/image19.jpeg" data-order="19"/>
-                <img src="./images/image20.jpeg" data-order="20"/>
+        <main>
+            <h1 class="larger">Gallery</h1>
+            <div class="gallery">
+                <div class="column">
+                    <img src="./images/image1.jpeg" data-order="1" alt="Gallery photo 1" loading="eager" />
+                    <img src="./images/image3.jpeg" data-order="3" alt="Gallery photo 3" loading="lazy" />
+                    <img src="./images/image5.jpeg" data-order="5" alt="Gallery photo 5" loading="lazy" />
+                    <img src="./images/image7.jpeg" data-order="7" alt="Gallery photo 7" loading="lazy" />
+                    <img src="./images/image9.jpeg" data-order="9" alt="Gallery photo 9" loading="lazy" />
+                    <img src="./images/image11.jpeg" data-order="11" alt="Gallery photo 11" loading="lazy" />
+                    <img src="./images/image13.jpeg" data-order="13" alt="Gallery photo 13" loading="lazy" />
+                    <img src="./images/image15.jpeg" data-order="15" alt="Gallery photo 15" loading="lazy" />
+                    <img src="./images/image17.jpeg" data-order="17" alt="Gallery photo 17" loading="lazy" />
+                    <img src="./images/image19.jpeg" data-order="19" alt="Gallery photo 19" loading="lazy" />
+                    <img src="./images/image20.jpeg" data-order="20" alt="Gallery photo 20" loading="lazy" />
+                </div>
+                <div class="column">
+                    <img src="./images/image2.jpeg" data-order="2" alt="Gallery photo 2" loading="lazy" />
+                    <img src="./images/image4.jpeg" data-order="4" alt="Gallery photo 4" loading="lazy" />
+                    <img src="./images/image6.jpeg" data-order="6" alt="Gallery photo 6" loading="lazy" />
+                    <img src="./images/image8.jpeg" data-order="8" alt="Gallery photo 8" loading="lazy" />
+                    <img src="./images/image10.jpeg" data-order="10" alt="Gallery photo 10" loading="lazy" />
+                    <img src="./images/image12.jpeg" data-order="12" alt="Gallery photo 12" loading="lazy" />
+                    <img src="./images/image14.jpeg" data-order="14" alt="Gallery photo 14" loading="lazy" />
+                    <img src="./images/image16.jpeg" data-order="16" alt="Gallery photo 16" loading="lazy" />
+                    <img src="./images/image18.jpeg" data-order="18" alt="Gallery photo 18" loading="lazy" />
+                    <img src="./images/image21.jpeg" data-order="21" alt="Gallery photo 21" loading="lazy" />
+                </div>
             </div>
-            <div class="column">
-                <img src="./images/image2.jpeg" data-order="2" />
-                <img src="./images/image4.jpeg" data-order="4" />
-                <img src="./images/image6.jpeg" data-order="6"/>
-                <img src="./images/image8.jpeg" data-order="8"/>
-                <img src="./images/image10.jpeg" data-order="10"/>
-                <img src="./images/image12.jpeg" data-order="12"/>
-                <img src="./images/image14.jpeg" data-order="14"/>
-                <img src="./images/image16.jpeg" data-order="16"/>
-                <img src="./images/image18.jpeg" data-order="18"/>
-                <img src="./images/image21.jpeg" data-order="21"/>
-            </div>
-        </div>
+        </main>
+        <!-- Site footer (injected by navigation.js) -->
+        <footer class="site-footer" data-footer></footer>
     </div>
 </body>
 </html>

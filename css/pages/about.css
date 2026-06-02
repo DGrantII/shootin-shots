@@ -1,3 +1,5 @@
+/* About page: profile photo and bio layout. */
+
 @charset "utf-8";
 
 h1 {
@@ -30,13 +32,17 @@ img {
 
 a#email {
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
     display: block;
 }
 
 a#email:hover {
     color: rgb(0, 98, 255);
-    text-decoration: underline;
+}
+
+a#email:focus-visible {
+    outline: 2px solid rgb(176, 44, 71);
+    outline-offset: 2px;
 }
 
 @media (max-width: 800px) {
@@ -44,7 +50,8 @@ a#email:hover {
         flex-flow: column;
     }
 
-    div#flex-container > aside, div#flex-container > section {
+    div#flex-container > aside,
+    div#flex-container > section {
         width: 100%;
         padding: 0;
     }

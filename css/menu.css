@@ -1,0 +1,102 @@
+/* Fixed hamburger navigation and slide-out menu panel. */
+
+@charset "utf-8";
+
+div#menu-container {
+    margin-left: 2%;
+    position: fixed;
+    top: 20px;
+    height: 200px;
+    width: 200px;
+    z-index: 2;
+}
+
+/* Hamburger toggle (rendered as button for accessibility) */
+button#menuBars {
+    cursor: pointer;
+    width: 35px;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+button#menuBars:focus-visible {
+    outline: 3px solid rgb(176, 44, 71);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+button#menuBars div {
+    width: 100%;
+    height: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+button#menuBars div.other {
+    background-color: black;
+}
+
+div#menu-container > nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    left: -500px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--cream);
+    border-radius: 10px;
+    transition: left 0.75s;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+div#menu-container > nav.shown {
+    left: 0;
+}
+
+nav#menu > a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 10px 10px;
+    font-size: 1.5em;
+    transition: color 0.25s, text-decoration 0.25s, font-size 0.25s;
+    transition-timing-function: linear;
+}
+
+nav#menu > a:hover,
+nav#menu > a:active {
+    color: rgb(176, 44, 71);
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.75em;
+}
+
+nav#menu > a:focus-visible {
+    outline: 2px solid rgb(176, 44, 71);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1000px) {
+    div#menu-container {
+        width: 30%;
+        height: auto;
+    }
+
+    div#menu-container > nav {
+        width: clamp(76px, 50%, 200px);
+        height: auto;
+    }
+
+    nav#menu > a {
+        font-size: clamp(12px, 2vw, 1.5em);
+    }
+
+    nav#menu > a:hover,
+    nav#menu > a:active {
+        font-size: 2.5vw;
+    }
+}
