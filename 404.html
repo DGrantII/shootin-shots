@@ -20,7 +20,10 @@
     <div id="menu-container" data-nav></div>
     <div id="content">
         <header>
-            <img src="./images/shootin-shots-logo.png" alt="Shootin' Shots Photography" />
+            <picture>
+                    <source type="image/webp" srcset="./images/shootin-shots-logo-640w.webp 640w, ./images/shootin-shots-logo-1000w.webp 1000w" sizes="(max-width: 1000px) 100vw, 1000px" />
+                    <img src="./images/shootin-shots-logo.png" width="1000" height="216" alt="Shootin' Shots Photography" decoding="async" />
+                </picture>
         </header>
         <main>
             <h1 id="notFound">Oops... The page you are looking for does not exist.</h1>

@@ -29,8 +29,13 @@ div.column {
     width: 90%;
 }
 
-div.column > img {
+div.column picture {
+    display: block;
     margin-top: 8px;
+}
+
+div.column img {
+    display: block;
     vertical-align: middle;
     width: 100%;
     opacity: 0;
@@ -38,6 +43,6 @@ div.column > img {
     transition-timing-function: ease-in;
 }
 
-div.column > img.visible {
+div.column img.visible {
     opacity: 1;
 }

@@ -20,12 +20,18 @@
     <div id="menu-container" data-nav></div>
     <div id="content">
         <header>
-            <img src="./images/shootin-shots-logo.png" alt="Shootin' Shots Photography" />
+            <picture>
+                    <source type="image/webp" srcset="./images/shootin-shots-logo-640w.webp 640w, ./images/shootin-shots-logo-1000w.webp 1000w" sizes="(max-width: 1000px) 100vw, 1000px" />
+                    <img src="./images/shootin-shots-logo.png" width="1000" height="216" alt="Shootin' Shots Photography" decoding="async" />
+                </picture>
         </header>
         <main>
             <div id="flex-container">
                 <aside>
-                    <img id="profile" src="./images/profile.jpeg" alt="Cassidy Sophier, photographer" />
+                    <picture>
+                    <source type="image/webp" srcset="./images/profile-300w.webp 300w, ./images/profile-600w.webp 600w" sizes="(max-width: 800px) 300px, 300px" />
+                    <img id="profile" src="./images/profile.jpeg" width="600" height="450" alt="Cassidy Sophier, photographer" decoding="async" />
+                </picture>
                 </aside>
                 <section>
                     <h1>Cassidy Sophier, Behind the Camera</h1>

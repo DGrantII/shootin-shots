@@ -29,7 +29,7 @@ shootin-shots/
 
 ## Images
 
-Place all image assets in the `images/` folder:
+Place image assets in the `images/` folder (or full-resolution masters in `images-source/` — see below).
 
 | File | Purpose |
 |------|---------|
@@ -37,6 +37,27 @@ Place all image assets in the `images/` folder:
 | `profile.jpeg` | About page headshot |
 | `bubble1.jpeg` … `bubble4.jpeg` | Home page service samples |
 | `image1.jpeg` … `image21.jpeg` | Gallery photos |
+
+### Optimizing for the web (Lighthouse / performance)
+
+Gallery photos were often 6000px wide but display at ~500px in a two-column layout. The repo includes a build step that:
+
+1. Generates **WebP** variants at display-appropriate widths (with `srcset` / `sizes`).
+2. Replaces oversized **JPEG/PNG fallbacks** with resized, compressed files.
+3. Updates HTML to use `<picture>` so modern browsers load WebP and others use JPEG/PNG.
+
+**Before your first optimization run**, copy originals into `images-source/` if you want to keep full-resolution masters (the script overwrites files in `images/`).
+
+```bash
+npm install
+npm run optimize-images
+```
+
+Re-run `npm run optimize-images` whenever you add or replace photos. Width presets live in `scripts/optimize-images.mjs` (`gallery`, `home`, `profile`, `logo`).
+
+### Cache lifetimes (GitHub Pages)
+
+GitHub Pages sets cache headers for you; you cannot customize them in-repo. If Lighthouse still flags cache policy, put the site behind **Cloudflare** (or similar) and set long cache TTLs for `/images/*`. That is optional; image size reduction usually has the larger impact on performance score.
 
 ## Run locally
 

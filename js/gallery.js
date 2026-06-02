@@ -9,7 +9,7 @@ function revealGalleryImages() {
         return;
     }
 
-    const images = Array.from(document.querySelectorAll('div.column > img'));
+    const images = Array.from(document.querySelectorAll('div.column img'));
     images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
 
     let index = 0;

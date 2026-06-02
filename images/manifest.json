@@ -1,0 +1,272 @@
+{
+  "bubble1": {
+    "base": "bubble1",
+    "preset": "home",
+    "srcset": "./images/bubble1-400w.webp 400w, ./images/bubble1-800w.webp 800w",
+    "fallback": "./images/bubble1.jpeg",
+    "width": 800,
+    "height": 704,
+    "sizes": "(max-width: 500px) 70vw, min(50vw, 500px)",
+    "fallbackType": "image/jpeg"
+  },
+  "bubble2": {
+    "base": "bubble2",
+    "preset": "home",
+    "srcset": "./images/bubble2-400w.webp 400w, ./images/bubble2-800w.webp 800w",
+    "fallback": "./images/bubble2.jpeg",
+    "width": 800,
+    "height": 935,
+    "sizes": "(max-width: 500px) 70vw, min(50vw, 500px)",
+    "fallbackType": "image/jpeg"
+  },
+  "bubble3": {
+    "base": "bubble3",
+    "preset": "home",
+    "srcset": "./images/bubble3-400w.webp 400w, ./images/bubble3-673w.webp 673w",
+    "fallback": "./images/bubble3.jpeg",
+    "width": 673,
+    "height": 540,
+    "sizes": "(max-width: 500px) 70vw, min(50vw, 500px)",
+    "fallbackType": "image/jpeg"
+  },
+  "bubble4": {
+    "base": "bubble4",
+    "preset": "home",
+    "srcset": "./images/bubble4-400w.webp 400w, ./images/bubble4-800w.webp 800w",
+    "fallback": "./images/bubble4.jpeg",
+    "width": 800,
+    "height": 945,
+    "sizes": "(max-width: 500px) 70vw, min(50vw, 500px)",
+    "fallbackType": "image/jpeg"
+  },
+  "image1": {
+    "base": "image1",
+    "preset": "gallery",
+    "srcset": "./images/image1-480w.webp 480w, ./images/image1-810w.webp 810w",
+    "fallback": "./images/image1.jpeg",
+    "width": 810,
+    "height": 540,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image10": {
+    "base": "image10",
+    "preset": "gallery",
+    "srcset": "./images/image10-480w.webp 480w, ./images/image10-960w.webp 960w",
+    "fallback": "./images/image10.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image11": {
+    "base": "image11",
+    "preset": "gallery",
+    "srcset": "./images/image11-480w.webp 480w, ./images/image11-960w.webp 960w",
+    "fallback": "./images/image11.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image12": {
+    "base": "image12",
+    "preset": "gallery",
+    "srcset": "./images/image12-480w.webp 480w, ./images/image12-960w.webp 960w",
+    "fallback": "./images/image12.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image13": {
+    "base": "image13",
+    "preset": "gallery",
+    "srcset": "./images/image13-480w.webp 480w, ./images/image13-960w.webp 960w",
+    "fallback": "./images/image13.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image14": {
+    "base": "image14",
+    "preset": "gallery",
+    "srcset": "./images/image14-480w.webp 480w, ./images/image14-960w.webp 960w",
+    "fallback": "./images/image14.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image15": {
+    "base": "image15",
+    "preset": "gallery",
+    "srcset": "./images/image15-480w.webp 480w, ./images/image15-960w.webp 960w",
+    "fallback": "./images/image15.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image16": {
+    "base": "image16",
+    "preset": "gallery",
+    "srcset": "./images/image16-480w.webp 480w, ./images/image16-960w.webp 960w",
+    "fallback": "./images/image16.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image17": {
+    "base": "image17",
+    "preset": "gallery",
+    "srcset": "./images/image17-480w.webp 480w, ./images/image17-960w.webp 960w",
+    "fallback": "./images/image17.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image18": {
+    "base": "image18",
+    "preset": "gallery",
+    "srcset": "./images/image18-480w.webp 480w, ./images/image18-960w.webp 960w",
+    "fallback": "./images/image18.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image19": {
+    "base": "image19",
+    "preset": "gallery",
+    "srcset": "./images/image19-480w.webp 480w, ./images/image19-960w.webp 960w",
+    "fallback": "./images/image19.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image2": {
+    "base": "image2",
+    "preset": "gallery",
+    "srcset": "./images/image2-480w.webp 480w, ./images/image2-960w.webp 960w",
+    "fallback": "./images/image2.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image20": {
+    "base": "image20",
+    "preset": "gallery",
+    "srcset": "./images/image20-480w.webp 480w, ./images/image20-960w.webp 960w",
+    "fallback": "./images/image20.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image21": {
+    "base": "image21",
+    "preset": "gallery",
+    "srcset": "./images/image21-480w.webp 480w, ./images/image21-960w.webp 960w",
+    "fallback": "./images/image21.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image3": {
+    "base": "image3",
+    "preset": "gallery",
+    "srcset": "./images/image3-480w.webp 480w, ./images/image3-960w.webp 960w",
+    "fallback": "./images/image3.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image4": {
+    "base": "image4",
+    "preset": "gallery",
+    "srcset": "./images/image4-480w.webp 480w, ./images/image4-960w.webp 960w",
+    "fallback": "./images/image4.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image5": {
+    "base": "image5",
+    "preset": "gallery",
+    "srcset": "./images/image5-480w.webp 480w, ./images/image5-960w.webp 960w",
+    "fallback": "./images/image5.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image6": {
+    "base": "image6",
+    "preset": "gallery",
+    "srcset": "./images/image6-480w.webp 480w, ./images/image6-960w.webp 960w",
+    "fallback": "./images/image6.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image7": {
+    "base": "image7",
+    "preset": "gallery",
+    "srcset": "./images/image7-480w.webp 480w, ./images/image7-960w.webp 960w",
+    "fallback": "./images/image7.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image8": {
+    "base": "image8",
+    "preset": "gallery",
+    "srcset": "./images/image8-480w.webp 480w, ./images/image8-960w.webp 960w",
+    "fallback": "./images/image8.jpeg",
+    "width": 960,
+    "height": 1440,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "image9": {
+    "base": "image9",
+    "preset": "gallery",
+    "srcset": "./images/image9-480w.webp 480w, ./images/image9-960w.webp 960w",
+    "fallback": "./images/image9.jpeg",
+    "width": 960,
+    "height": 640,
+    "sizes": "(max-width: 500px) 100vw, 50vw",
+    "fallbackType": "image/jpeg"
+  },
+  "profile": {
+    "base": "profile",
+    "preset": "profile",
+    "srcset": "./images/profile-300w.webp 300w, ./images/profile-600w.webp 600w",
+    "fallback": "./images/profile.jpeg",
+    "width": 600,
+    "height": 450,
+    "sizes": "(max-width: 800px) 300px, 300px",
+    "fallbackType": "image/jpeg"
+  },
+  "shootin-shots-logo": {
+    "base": "shootin-shots-logo",
+    "preset": "logo",
+    "srcset": "./images/shootin-shots-logo-640w.webp 640w, ./images/shootin-shots-logo-1000w.webp 1000w",
+    "fallback": "./images/shootin-shots-logo.png",
+    "width": 1000,
+    "height": 216,
+    "sizes": "(max-width: 1000px) 100vw, 1000px",
+    "fallbackType": "image/png"
+  }
+}
