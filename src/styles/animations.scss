@@ -1,0 +1,24 @@
+// Gallery fade-in reveal (ported from gallery.css)
+
+.gallery img {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.gallery-thumb {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: transparent;
+  display: block;
+  width: 100%;
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+}

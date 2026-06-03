@@ -1,0 +1,95 @@
+.about-layout {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+  }
+}
+
+.about-aside {
+  width: 30%;
+
+  picture {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-top: 20px solid var(--pink);
+      border-left: 20px solid var(--pink);
+      border-bottom: 20px solid var(--dark-pink);
+      border-right: 20px solid var(--dark-pink);
+      box-shadow: var(--shadow);
+    }
+  }
+}
+
+.about-content {
+  width: 70%;
+  padding-left: 50px;
+}
+
+.about-description-card {
+  text-align: left;
+  padding: 15px 20px 20px;
+
+  .display-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.about-email {
+  color: black;
+  text-decoration: underline;
+
+  &:hover {
+    color: rgb(0, 98, 255);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about-aside picture img {
+    border-top-width: 2vw;
+    border-left-width: 2vw;
+    border-bottom-width: 2vw;
+    border-right-width: 2vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-layout {
+    flex-flow: column;
+    margin-top: 2rem;
+  }
+
+  .about-aside,
+  .about-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-aside {
+    margin-bottom: 30px;
+  }
+
+  .about-aside picture {
+    max-width: min(300px, 70vw);
+  }
+}

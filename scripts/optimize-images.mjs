@@ -1,6 +1,6 @@
 /**
  * Resize and compress site images to match on-screen display sizes.
- * Generates WebP srcset variants and smaller JPEG/PNG fallbacks in images/.
+ * Generates WebP srcset variants and smaller JPEG/PNG fallbacks in public/images/.
  *
  * Usage: npm run optimize-images
  * Optional: place full-resolution masters in images-source/ (used when present).
@@ -13,7 +13,7 @@ import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
-const imagesDir = path.join(root, 'images');
+const imagesDir = path.join(root, 'public', 'images');
 const sourceDir = path.join(root, 'images-source');
 const manifestPath = path.join(imagesDir, 'manifest.json');
 
@@ -93,7 +93,6 @@ async function optimizeFile(fileName) {
   const isLogo = presetKey === 'logo';
 
   const inputBuffer = await fs.readFile(inputPath);
-  // Apply EXIF orientation before measuring or resizing (fixes rotation / squish).
   const orientedBuffer = await sharp(inputBuffer).rotate().toBuffer();
   const metadata = await sharp(orientedBuffer).metadata();
   if (!metadata.width || !metadata.height) {
@@ -164,115 +163,6 @@ async function optimizeFile(fileName) {
   };
 }
 
-function buildPictureTag(entry, { alt, loading, id, dataOrder }) {
-  const attrs = [
-    id ? `id="${id}"` : '',
-    dataOrder ? `data-order="${dataOrder}"` : '',
-    `src="${entry.fallback}"`,
-    `width="${entry.width}"`,
-    `height="${entry.height}"`,
-    `alt="${alt}"`,
-    loading ? `loading="${loading}"` : '',
-    'decoding="async"',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  return `<picture>
-                    <source type="image/webp" srcset="${entry.srcset}" sizes="${entry.sizes}" />
-                    <img ${attrs} />
-                </picture>`;
-}
-
-function applyManifestDimensions(html, manifest) {
-  let out = html;
-  for (const entry of Object.values(manifest)) {
-    const src = entry.fallback.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    out = out.replace(
-      new RegExp(`(<img[^>]*src="${src}"[^>]*?)width="\\d+"`, 'g'),
-      `$1width="${entry.width}"`,
-    );
-    out = out.replace(
-      new RegExp(`(<img[^>]*src="${src}"[^>]*?)height="\\d+"`, 'g'),
-      `$1height="${entry.height}"`,
-    );
-    const base = entry.base;
-    out = out.replace(
-      new RegExp(
-        `(<source[^>]*srcset=")([^"]*${base}[^"]*)("[^>]*sizes=")[^"]*(")`,
-        'g',
-      ),
-      `$1${entry.srcset}$3${entry.sizes}$4`,
-    );
-  }
-  return out;
-}
-
-async function patchHtml(manifest) {
-  const galleryPath = path.join(root, 'gallery.html');
-  let galleryHtml = await fs.readFile(galleryPath, 'utf8');
-  galleryHtml = galleryHtml.replace(
-    /<img src="\.\/images\/(image\d+)\.jpeg" data-order="(\d+)" alt="([^"]*)" loading="([^"]*)" \/>/g,
-    (_, base, order, alt, loading) => {
-      const entry = manifest[base];
-      if (!entry) {
-        return _;
-      }
-      return buildPictureTag(entry, { alt, loading, dataOrder: order });
-    },
-  );
-  galleryHtml = applyManifestDimensions(galleryHtml, manifest);
-  await fs.writeFile(galleryPath, galleryHtml);
-
-  const indexPath = path.join(root, 'index.html');
-  let indexHtml = await fs.readFile(indexPath, 'utf8');
-  const bubbleAlts = {
-    bubble1: 'Wedding and engagement photography sample',
-    bubble2: 'Graduation photography sample',
-    bubble3: 'Business and headshot photography sample',
-    bubble4: 'Event photography sample',
-  };
-  for (const [base, alt] of Object.entries(bubbleAlts)) {
-    const entry = manifest[base];
-    if (!entry) {
-      continue;
-    }
-    const re = new RegExp(
-      `<img src="\\.\\/images\\/${base}\\.jpeg" alt="${alt.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}" />`,
-    );
-    indexHtml = indexHtml.replace(re, buildPictureTag(entry, { alt }));
-  }
-  indexHtml = applyManifestDimensions(indexHtml, manifest);
-  await fs.writeFile(indexPath, indexHtml);
-
-  const aboutPath = path.join(root, 'about.html');
-  let aboutHtml = await fs.readFile(aboutPath, 'utf8');
-  const profile = manifest.profile;
-  if (profile) {
-    aboutHtml = aboutHtml.replace(
-      /<img id="profile" src="\.\/images\/profile\.jpeg" alt="([^"]*)" \/>/,
-      buildPictureTag(profile, { alt: 'Cassidy Sophier, photographer', id: 'profile' }),
-    );
-  }
-  aboutHtml = applyManifestDimensions(aboutHtml, manifest);
-  await fs.writeFile(aboutPath, aboutHtml);
-
-  const logo = manifest['shootin-shots-logo'];
-  if (logo) {
-    const logoPicture = buildPictureTag(logo, { alt: "Shootin' Shots Photography" });
-    for (const page of ['index.html', 'about.html', 'gallery.html', '404.html']) {
-      const pagePath = path.join(root, page);
-      let html = await fs.readFile(pagePath, 'utf8');
-      html = html.replace(
-        /<img src="\.\/images\/shootin-shots-logo\.png" alt="Shootin' Shots Photography" \/>/,
-        logoPicture,
-      );
-      html = applyManifestDimensions(html, manifest);
-      await fs.writeFile(pagePath, html);
-    }
-  }
-}
-
 async function pruneOldVariants() {
   const files = await fs.readdir(imagesDir);
   await Promise.all(
@@ -283,6 +173,8 @@ async function pruneOldVariants() {
 }
 
 async function main() {
+  await fs.mkdir(imagesDir, { recursive: true });
+
   const useSource = await fs
     .access(sourceDir)
     .then(() => true)
@@ -307,9 +199,8 @@ async function main() {
   }
 
   await fs.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
-  await patchHtml(manifest);
 
-  console.log(`Done. Processed ${names.length} image(s). Updated HTML with <picture> markup.`);
+  console.log(`Done. Processed ${names.length} image(s). Wrote manifest.json.`);
 }
 
 main().catch((err) => {

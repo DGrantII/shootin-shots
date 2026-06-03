@@ -1,0 +1,125 @@
+.home-subtitle {
+  margin-top: 10px;
+  text-align: center;
+  color: black;
+  font-weight: 300;
+}
+
+.home-intro {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.home-header {
+  margin-bottom: 15px;
+}
+
+.topic-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 50px;
+  min-height: 50vh;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.image-container,
+.text-container {
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+  height: 100%;
+  flex: 1;
+}
+
+.image-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 50%;
+  height: 0;
+  position: relative;
+}
+
+.text-container {
+  width: 40%;
+  text-align: center;
+}
+
+.image-container picture {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 20px solid var(--pink);
+  border-left: 20px solid var(--pink);
+  border-bottom: 20px solid var(--dark-pink);
+  border-right: 20px solid var(--dark-pink);
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.hidden-left {
+  transform: translateX(-100%);
+}
+
+.hidden-right {
+  transform: translateX(100%);
+}
+
+.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .image-container picture img {
+    border-top: 2vw solid var(--pink);
+    border-left: 2vw solid var(--pink);
+    border-bottom: 2vw solid var(--dark-pink);
+    border-right: 2vw solid var(--dark-pink);
+  }
+}
+
+@media (max-width: 500px) {
+  .topic-section {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .image-container {
+    padding-top: 70%;
+    order: 1;
+    margin-bottom: 30px;
+    width: 70%;
+  }
+
+  .text-container {
+    order: 2;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .hidden-left,
+  .hidden-right {
+    transform: translateY(50px);
+  }
+
+  .visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
